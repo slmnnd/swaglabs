@@ -1,6 +1,5 @@
-// import {$} from '@wdio/globals'
 
-class login {
+class LoginPage {
 
     //locators
     get username (){ return $('~test-Username')}
@@ -18,25 +17,9 @@ class login {
         await this.password.setValue(pass)        
     }
 
-    // async usernameInput(uname){
-    //     await this.username.setValue(uname)
-    // }
-
-    // async passwordInput(pass){
-    //     await this.password.setValue(pass)  
-    // }
-
-    // async nullUsername (){
-    //     await this.username.clearValue()
-    // }
-
-    // async nullPassword (){
-    //     await this.password.clearValue()
-    // }
-
     async clickLoginBtn(){
         await this.loginBtn.click()
     }
 }
 
-export default new login()
+export default new LoginPage()
