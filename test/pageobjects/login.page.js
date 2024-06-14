@@ -1,4 +1,4 @@
-import {$} from '@wdio/globals'
+// import {$} from '@wdio/globals'
 
 class login {
 
@@ -18,21 +18,21 @@ class login {
         await this.password.setValue(pass)        
     }
 
-    async usernameInput(uname){
-        await this.username.setValue(uname)
-    }
+    // async usernameInput(uname){
+    //     await this.username.setValue(uname)
+    // }
 
-    async passwordInput(pass){
-        await this.password.setValue(pass)  
-    }
+    // async passwordInput(pass){
+    //     await this.password.setValue(pass)  
+    // }
 
-    async nullUsername (){
-        await this.username.clearValue()
-    }
+    // async nullUsername (){
+    //     await this.username.clearValue()
+    // }
 
-    async nullPassword (){
-        await this.password.clearValue()
-    }
+    // async nullPassword (){
+    //     await this.password.clearValue()
+    // }
 
     async clickLoginBtn(){
         await this.loginBtn.click()

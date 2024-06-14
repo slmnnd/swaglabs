@@ -1,5 +1,7 @@
 import {driver} from '@wdio/globals'
 import login from '../pageobjects/login.page.js'
+import homepage from '../pageobjects/homepage.page.js'
+import scroll from '../handlers/scroll.js'
 
 describe('<<<<<<<<<< LOGIN TESTING >>>>>>>>>>', function(){    
 
@@ -13,9 +15,8 @@ describe('<<<<<<<<<< LOGIN TESTING >>>>>>>>>>', function(){
     })
 
     //negative
-    it('User login dengan username yang benar dan password yang kosong', async function(){
-        await login.usernameInput('standard_user')
-        await login.nullPassword()
+    it.only('User login dengan username yang benar dan password yang kosong', async function(){
+        await login.loginInput('standart_user', '')
         await login.clickLoginBtn()
         await driver.pause(3000);
 
@@ -24,9 +25,8 @@ describe('<<<<<<<<<< LOGIN TESTING >>>>>>>>>>', function(){
     })
 
     //negative
-    it('User login dengan username yang kosong dan password yang benar', async function(){
-        await login.nullUsername()
-        await login.passwordInput('secret_sauce')
+    it.only('User login dengan username yang kosong dan password yang benar', async function(){
+        await login.loginInput('', 'secret_sauce')
         await login.clickLoginBtn()
         await driver.pause(3000);
 
@@ -84,24 +84,36 @@ describe('<<<<<<<<<< LOGIN TESTING >>>>>>>>>>', function(){
 })
 
 describe.skip('<<<<<<<<<< HOMEPAGE TESTING >>>>>>>>>>', function(){
-    it('User mengecek Produk Sauce Labs Backpack', async function(){
+    it('User mengecek Produk Sauce Labs Backpack', async function(){ //error
+        await homepage.checkBackpack()
+        await driver.pause(3000) 
+        await scroll(400, 300)
+        // await scroll(300, 500)
+        
+        await expect(homepage.txtBackpack).toHaveText(homepage.titleBackpack)
+    })
+
+    it('User menambahkan Produk Sauce Labs Backpack ke dalam keranjang', async function(){
+        await homepage.addProductToCart()
+        
+        await expect(homepage.txtCart).toHaveText(homepage.titleBackpack)
 
     })
 
-    it('', async function(){
+    it('User menghapus Produk dari dalam keranjang', async function(){
+        // await driver.back()
 
     })
-
-    it('', async function(){
-
-    })
-    it('', async function(){
+    it('User mengurutkan produk berdasarkan abjad A hingga Z', async function(){
 
     })
-    it('', async function(){
+    it('User mengurutkan produk berdasarkan harga Low hingga High', async function(){
 
     })
-    it('', async function(){
+    it('User memasukkan semua produk ke dalam keranjang', async function(){
+
+    })
+    it('User membatalkan melakukan sorting produk', async function(){
 
     })
 })
