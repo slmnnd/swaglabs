@@ -1,5 +1,5 @@
 import {driver} from '@wdio/globals'
-import LoginPage from '../pageobjects/login-page.page.js'
+import LoginPage from '../pageobjects/loginpage.page.js'
 
 describe('<<<<<<<<<< LOGIN TESTING >>>>>>>>>>', function(){    
 

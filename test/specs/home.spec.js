@@ -1,5 +1,5 @@
 import {driver} from '@wdio/globals'
-import HomePage from '../pageobjects/home-page.page.js'
+import HomePage from '../pageobjects/homepage.page.js'
 import scroll from '../handlers/scroll.js'
 
 describe.skip('<<<<<<<<<< HOMEPAGE TESTING >>>>>>>>>>', function(){
@@ -34,6 +34,15 @@ describe.skip('<<<<<<<<<< HOMEPAGE TESTING >>>>>>>>>>', function(){
 
     })
     it('User membatalkan melakukan sorting produk', async function(){
+
+    })
+    it('', async function(){
+
+    })
+    it('', async function(){
+
+    })
+    it('', async function(){
 
     })
 })
