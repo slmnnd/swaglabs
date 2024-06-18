@@ -1,7 +1,7 @@
 import {driver} from '@wdio/globals'
-import HomePage from '../pageobjects/homepage.page.js'
+import HomePage from '../pageobjects/home-page.page.js'
 import scroll from '../helpers/scroll.js'
-import LoginPage from '../pageobjects/loginpage.page.js'
+import LoginPage from '../pageobjects/login-page.page.js'
 import swipe from '../helpers/swipe.js'
 import sorted from '../helpers/sorted.js'
 
